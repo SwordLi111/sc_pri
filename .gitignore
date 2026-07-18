@@ -1,0 +1,22 @@
+# Data & artifacts
+cache/
+checkpoints/
+debug/
+logs/
+fiftyone_zoo/
+*.pt
+*.pth
+*.png
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store

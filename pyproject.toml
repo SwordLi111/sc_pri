@@ -1,0 +1,27 @@
+[project]
+name = "sc_pri"
+version = "0.1.0"
+description = "Latent-space semantic communication for privacy protection"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0",
+    "torchvision",
+    "diffusers>=0.20",
+    "transformers",
+    "accelerate",
+    "fiftyone",
+    "scikit-learn",
+    "tqdm",
+    "pyyaml",
+    "pillow",
+    "numpy",
+    "pandas",
+    "matplotlib",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sc_pri*"]

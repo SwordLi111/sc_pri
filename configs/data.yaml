@@ -1,0 +1,45 @@
+# Data configuration for SC_PRI
+
+# Target classes (order defines class index for masks)
+classes:
+  - name: "Human face"
+    idx: 0
+    # MID verified in stage 0
+    mid: "/m/0dzct"
+  - name: "Vehicle registration plate"
+    idx: 1
+    mid: "/m/01jfm_"
+
+# Image / latent dimensions
+image:
+  size: 512           # letterbox target size
+  pad_value: 114      # gray padding value
+
+latent:
+  size: 64            # SD-VAE downsamples 8x
+  channels: 4
+  downsample: 8
+  scale_factor: 0.18215   # SD-VAE latent scaling
+
+# Download configuration
+download:
+  n_train: 5000
+  n_val: 1000
+  seed: 42
+  fiftyone_zoo_dir: "/tmp/jli038/fiftyone_zoo"   # where fiftyone stores raw downloads
+
+# Cache configuration
+cache:
+  root: "cache/oi_face_plate"
+  train_subdir: "train"
+  val_subdir: "val"
+
+# Filtering (bbox / mask attributes to exclude)
+filter:
+  is_group_of: true       # exclude group-of boxes
+  is_depiction: true      # exclude cartoons/drawings
+
+# VAE model
+vae:
+  model_id: "stabilityai/sd-vae-ft-mse"
+  device: "cuda"
